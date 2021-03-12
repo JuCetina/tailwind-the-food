@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="bg-yellow-500">
+    <!-- Alpine.JS para abrir y cerrar el menú -->
+    <nav x-data="{ open: false }" class="sticky top-0 z-10 w-full bg-secondary text-gray-100">
+        <div class="p-4 bg-secondary text-white flex justify-between items-center">
+            <div>
+                <img class="h-8 py-1" src="images/logo-w.svg" alt="Logo">
+            </div>
+            <div @click="open = true" class="text-2xl">&equiv;</div>
+        </div>
+        <div x-show="open"
+            @click.away="open = false">
+
+            <div class="md:w-8/12 md:mx-auto mx-4 pb-4">
+                <input class="form-input" type="search" name="buscar" id="buscar" placeholder="Buscar">
+            </div>
+            <div class="md:flex md:justify-around md:items-center pb-4">
+                <div class="flex">
+                    <p class="mx-4">Precio:</p>
+                    <p class="mx-2 text-primary">$</p>
+                    <p>$$</p>
+                    <p class="mx-2">$$$</p>
+                    <p class="mx-2">$$$$</p>
+                </div>
+                <div class="flex">
+                    <p class="mx-4">Calificación:</p>
+                    <p class="ml-2 text-primary">&starf;</p>
+                    <p class="ml-px text-primary">&starf;</p>
+                    <p class="ml-px text-primary">&starf;</p>
+                    <p class="ml-px text-primary">&starf;</p>
+                    <p class="ml-px">&star;</p>
+                </div>
+                <div>
+                    <button class="btn mx-4">Filtrar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero -->
+        <div class="h-56 md:h-80 bg-no-repeat bg-cover bg-bottom md:bg-center" style="background-image: url('images/restaurante.jpg');"></div>
+        <!-- Container -->
+        <div class="container mb-4 mx-auto md:flex md:justify-evenly md:flex-wrap">
+            <!-- Cards -->
+            <div class="mx-2 md:mx-0 mt-4 md:w-5/12 md:flex md:bg-white md:rounded-lg md:shadow-lg">
+                <div>
+                    <img class="w-full h-64 md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none" src="images/hamburguesa.jpg" alt="Hamburguesa">
+                </div>
+                <div class="md:flex md:flex-col md:justify-center text-gray-800 relative mx-2 p-3 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg md:rounded-none -mt-2">
+                    <h2 class="text-xl md:text-lg uppercase font-semibold">Hamburguesa clásica</h2>
+                    <p class="text-gray-700 leading-snug md:text-sm">Hamburguesa con queso, tomate y lechuga.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-700">$18.000</p>
+                    <p class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&starf;&star; / 39 reseñas</p>
+                </div>
+            </div>
+            <div class="mx-2 md:mx-0 mt-4 md:w-5/12 md:flex md:bg-white md:rounded-lg md:shadow-lg">
+                <div>
+                    <img class="w-full h-64 md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none" src="images/pizza.jpg" alt="Hotdog">
+                </div>
+                <div class="md:flex md:flex-col md:justify-center text-gray-800 relative mx-2 p-3 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg md:rounded-none -mt-2">
+                    <h2 class="text-xl md:text-lg uppercase font-semibold">Pizza</h2>
+                    <p class="text-gray-700 leading-snug md:text-sm">Pizza con muchos ingredientes en ella.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-700">$22.000</p>
+                    <p class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&starf;&star; / 17 reseñas</p>
+                </div>
+            </div>
+            <div class="mx-2 md:mx-0 mt-4 md:w-5/12 md:flex md:bg-white md:rounded-lg md:shadow-lg">
+                <div>
+                    <img class="w-full h-64 md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none" src="images/hotdog.jpg" alt="Papas">
+                </div>
+                <div class="md:flex md:flex-col md:justify-center text-gray-800 relative mx-2 p-3 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg md:rounded-none -mt-2">
+                    <h2 class="text-xl md:text-lg uppercase font-semibold">Hotdog</h2>
+                    <p class="text-gray-700 leading-snug md:text-sm">Hotdog con todas las salsas.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-700">$12.000</p>
+                    <p class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&starf;&star; / 26 reseñas</p>
+                </div>
+            </div>
+            <div class="mx-2 md:mx-0 mt-4 md:w-5/12 md:flex md:bg-white md:rounded-lg md:shadow-lg">
+                <div>
+                    <img class="w-full h-64 md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none" src="images/fries.jpg" alt="Hamburguesa">
+                </div>
+                <div class="md:flex md:flex-col md:justify-center text-gray-800 relative mx-2 p-3 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg md:rounded-none -mt-2">
+                    <h2 class="text-xl md:text-lg uppercase font-semibold">Papas a la francesa</h2>
+                    <p class="text-gray-700 leading-snug md:text-sm">Papas a la francesa con salsas.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-700">$8.000</p>
+                    <p class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&starf;&star; / 42 reseñas</p>
+                </div>
+            </div>
+            <!-- Contact Form-->
+            <div class="container my-4">
+                <div class="md:w-8/12 md:mx-auto mx-2">
+                    <div class="mb-1">
+                        <label class="label-input" for="nombre">Nombre</label>
+                        <input id="nombre" class="form-input" type="text" placeholder="Escribe tu nombre">
+                    </div>
+                    <div class="mb-1">
+                        <label class="label-input" for="email">E-mail</label>
+                        <input id="email" class="form-input" type="email" placeholder="Escribe tu e-mail">
+                    </div>
+                    <div class="mb-1">
+                        <label class="label-input" for="comentarios">Comentarios</label>
+                        <textarea class="form-input" name="comentarios" id="comentarios" cols="30" rows="10" placeholder="¿Sobre qué quieres hablarnos?"></textarea>
+                    </div>
+                    <div>
+                        <button class="btn mx-auto">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="w-full bg-secondary text-white py-4">
+        <div class="md:flex md:flex-row-reverse justify-around items-center">
+            <div class="ml-8 mt-4">
+                <div class="hover:text-blue-600"><i class="fa fa-facebook"></i> /facebook</div>
+                <div class="hover:text-blue-400"><i class="fa fa-twitter"></i> @twitter</div>
+                <div class="hover:text-yellow-600"><i class="fa fa-instagram"></i> @instagram</div>
+            </div>
+            <ul class="ml-8 mt-4 mb-4 md:list-disc">
+                <li>Soporte</li>
+                <li>Acerca de nosotros</li>
+                <li>Registro</li>
+                <li>Aviso de privacidad</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
